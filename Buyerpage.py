@@ -179,6 +179,80 @@ def pantsCall():
     drop_pants9=OptionMenu(lf_pants9,clicked_pants9,*options_pants).place(x=0,y=212)
     drop_pants10=OptionMenu(lf_pants10,clicked_pants10,*options_pants).place(x=0,y=212)
 
+    def increase_quantity_pants(label):
+            current_value = int(label["text"])
+            label["text"] = str(current_value + 1)
+
+    def decrease_quantity_pants(label):
+        current_value = int(label["text"])
+        if current_value > 1:
+            label["text"] = str(current_value - 1)
+
+
+    quantity_label_pants1 = Label(lf_pants1, text="1", font=("Helvetica", 16))
+    quantity_label_pants1.place(x=95,y=212)
+    quantity_label_pants2 = Label(lf_pants2, text="1", font=("Helvetica", 16))
+    quantity_label_pants2.place(x=95,y=212)
+    quantity_label_pants3 = Label(lf_pants3, text="1", font=("Helvetica", 16))
+    quantity_label_pants3.place(x=95,y=212)
+    quantity_label_pants4 = Label(lf_pants4, text="1", font=("Helvetica", 16))
+    quantity_label_pants4.place(x=95,y=212)
+    quantity_label_pants5 = Label(lf_pants5, text="1", font=("Helvetica", 16))
+    quantity_label_pants5.place(x=95,y=212)
+    quantity_label_pants6 = Label(lf_pants6, text="1", font=("Helvetica", 16))
+    quantity_label_pants6.place(x=95,y=212)
+    quantity_label_pants7 = Label(lf_pants7, text="1", font=("Helvetica", 16))
+    quantity_label_pants7.place(x=95,y=212)
+    quantity_label_pants8 = Label(lf_pants8, text="1", font=("Helvetica", 16))
+    quantity_label_pants8.place(x=95,y=212)
+    quantity_label_pants9 = Label(lf_pants9, text="1", font=("Helvetica", 16))
+    quantity_label_pants9.place(x=95,y=212)
+    quantity_label_pants10 = Label(lf_pants10, text="1", font=("Helvetica", 16))
+    quantity_label_pants10.place(x=95,y=212)
+    
+    
+
+    increase_button_pants1 = Button(lf_pants1, text="+", command=lambda:increase_quantity_pants(quantity_label_pants1), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_pants2 = Button(lf_pants2, text="+", command=lambda:increase_quantity_pants(quantity_label_pants2), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_pants3 = Button(lf_pants3, text="+", command=lambda:increase_quantity_pants(quantity_label_pants3), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_pants4 = Button(lf_pants4, text="+", command=lambda:increase_quantity_pants(quantity_label_pants4), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_pants5 = Button(lf_pants5, text="+", command=lambda:increase_quantity_pants(quantity_label_pants5), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_pants6 = Button(lf_pants6, text="+", command=lambda:increase_quantity_pants(quantity_label_pants6), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_pants7 = Button(lf_pants7, text="+", command=lambda:increase_quantity_pants(quantity_label_pants7), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_pants8 = Button(lf_pants8, text="+", command=lambda:increase_quantity_pants(quantity_label_pants8), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_pants9 = Button(lf_pants9, text="+", command=lambda:increase_quantity_pants(quantity_label_pants9), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_pants10 = Button(lf_pants10, text="+", command=lambda:increase_quantity_pants(quantity_label_pants10), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+
+
+    decrease_button_pants1 = Button(lf_pants1, text="-", command=lambda:decrease_quantity_pants(quantity_label_pants1), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_pants2 = Button(lf_pants2, text="-", command=lambda:decrease_quantity_pants(quantity_label_pants2), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_pants3 = Button(lf_pants3, text="-", command=lambda:decrease_quantity_pants(quantity_label_pants3), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_pants4 = Button(lf_pants4, text="-", command=lambda:decrease_quantity_pants(quantity_label_pants4), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_pants5 = Button(lf_pants5, text="-", command=lambda:decrease_quantity_pants(quantity_label_pants5), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_pants6 = Button(lf_pants6, text="-", command=lambda:decrease_quantity_pants(quantity_label_pants6), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_pants7 = Button(lf_pants7, text="-", command=lambda:decrease_quantity_pants(quantity_label_pants7), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_pants8 = Button(lf_pants8, text="-", command=lambda:decrease_quantity_pants(quantity_label_pants8), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_pants9 = Button(lf_pants9, text="-", command=lambda:decrease_quantity_pants(quantity_label_pants9), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_pants10 = Button(lf_pants10, text="-", command=lambda:decrease_quantity_pants(quantity_label_pants10), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+
+
+
+    def AddG1():
+        global pants_list
+        quantity = int(quantity_label_pants1["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Washed Blue Jeans"
+            price_per_item = 1599
+            total_price = quantity * price_per_item
+
+            pants_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    
     def AddG2():
         global pants_list
         quantity = int(quantity_label_pants2["text"])
