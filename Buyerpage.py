@@ -33,6 +33,8 @@ Button_frame=LabelFrame(root,bd=2,relief="groove")
 Button_frame.place(x=0,y=55,width=310,height=380)
 label_logo_button=Label(Button_frame,image=bg_image,bd=2).place(relheight=1,relwidth=1)
 
+
+
 pants1_image=ImageTk.PhotoImage(Image.open("Images/pants1.jpeg"))
 pants2_image=ImageTk.PhotoImage(Image.open("Images/pants2.jpg"))
 pants3_image=ImageTk.PhotoImage(Image.open("Images/pants3.jpeg"))
@@ -83,6 +85,102 @@ Jacket7_image=ImageTk.PhotoImage(Image.open("Images/Jacket7.jpg"))
 Jacket8_image=ImageTk.PhotoImage(Image.open("Images/Jacket8.jpg"))
 Jacket9_image=ImageTk.PhotoImage(Image.open("Images/Jacket9.jpg"))
 Jacket10_image=ImageTk.PhotoImage(Image.open("Images/Jacket10.jpg"))
+
+#pants Variables
+clicked_pants1=StringVar()
+clicked_pants1.set("Size")
+clicked_pants2=StringVar()
+clicked_pants2.set("Size")
+clicked_pants3=StringVar()
+clicked_pants3.set("Size")
+clicked_pants4=StringVar()
+clicked_pants4.set("Size")
+clicked_pants5=StringVar()
+clicked_pants5.set("Size")
+clicked_pants6=StringVar()
+clicked_pants6.set("Size")
+clicked_pants7=StringVar()
+clicked_pants7.set("Size")
+clicked_pants8=StringVar()
+clicked_pants8.set("Size")
+clicked_pants9=StringVar()
+clicked_pants9.set("Size")
+clicked_pants10=StringVar()
+clicked_pants10.set("Size")
+pants_list=[]
+
+#defining function to hide all frames inside product frame
+def HideAllFrames():
+    for widget in Products_frame.winfo_children():
+        widget.destroy()
+
+#defining pants and its attributes
+def pantsCall():
+   
+    HideAllFrames()
+   
+    pants_Label=Label(Products_frame,text="Pants",font="times 18 bold",fg="red").grid(row=0,column=0,padx=20)
+    lf_pants1=LabelFrame(Products_frame,bd=2,relief="flat",borderwidth=0)
+    lf_pants1.place(x=20,y=55,width=180,height=300)
+    lf_pants2=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_pants2.place(x=250,y=55,width=180,height=300)
+    lf_pants3=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_pants3.place(x=470,y=55,width=180,height=300)
+    lf_pants4=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_pants4.place(x=690,y=55,width=180,height=300)
+    lf_pants5=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_pants5.place(x=910,y=55,width=180,height=300)
+    lf_pants6=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_pants6.place(x=20,y=380,width=180,height=300)
+    lf_pants7=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_pants7.place(x=250,y=380,width=180,height=300)
+    lf_pants8=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_pants8.place(x=470,y=380,width=180,height=300)
+    lf_pants9=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_pants9.place(x=690,y=380,width=180,height=300)
+    lf_pants10=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_pants10.place(x=910,y=380,width=180,height=300)
+    label_pants_1=Label(lf_pants1,image=pants1_image,bd=2).grid(row=0,column=0)
+    label_pants_2=Label(lf_pants2,image=pants2_image,bd=2).grid(row=0,column=0)
+    label_pants_3=Label(lf_pants3,image=pants3_image,bd=2).grid(row=0,column=0,padx=13)
+    label_pants_4=Label(lf_pants4,image=pants4_image,bd=2).grid(row=0,column=0)
+    label_pants_5=Label(lf_pants5,image=pants5_image,bd=2).grid(row=0,column=0)
+    label_pants_6=Label(lf_pants6,image=pants6_image,bd=2).grid(row=0,column=0)
+    label_pants_7=Label(lf_pants7,image=pants7_image,bd=2).grid(row=0,column=0)
+    label_pants_8=Label(lf_pants8,image=pants8_image,bd=2).grid(row=0,column=0)
+    label_pants_9=Label(lf_pants9,image=pants9_image,bd=2).grid(row=0,column=0)
+    label_pants_10=Label(lf_pants10,image=pants10_image,bd=2).grid(row=0,column=0)
+
+    
+    name_pants1=Label(lf_pants1,text="Washed Blue Jeans",font="arial 9").grid(row=1,column=0)
+    name_pants2=Label(lf_pants2,text="Skinny Blue Jeans",font="arial 9",justify="center").grid(row=1,column=0,padx=15)
+    name_pants3=Label(lf_pants3,text="Baggy Blue Jeans",font="arial 9",justify="center").grid(row=1,column=0)
+    name_pants4=Label(lf_pants4,text="Baggy Carpenter Black Jeans",font="arial 9",justify="center").grid(row=1,column=0,padx=9)
+    name_pants5=Label(lf_pants5,text="Baggy Lightblue jeans",font="arial 9",justify="center").grid(row=1,column=0,padx=9)
+    name_pants6=Label(lf_pants6,text="Brown Chinos Pant",font="arial 9",justify="center").grid(row=1,column=0,padx=15)
+    name_pants7=Label(lf_pants7,text="BLack Washed Jeans",font="arial 9",justify="center").grid(row=1,column=0)
+    name_pants8=Label(lf_pants8,text="Blue Skinny Chinos Pants",font="arial 9",justify="center").grid(row=1,column=0,padx=20)
+    name_pants9=Label(lf_pants9,text="Khakis jeans",font="arial 9",justify="center").grid(row=1,column=0,padx=2)
+    name_pants10=Label(lf_pants10,text="Blue Plus size Jeans",font="arial 9",justify="center").grid(row=1,column=0)
+    
+    
+    options_pants=["S","M","L","XL","XXL"]
+   
+    global clicked_pants1,clicked_pants2,clicked_pants3,clicked_pants4,clicked_pants5,pants_list
+    global clicked_pants6,clicked_pants7,clicked_pants8,clicked_pants9,clicked_pants10
+    drop_pants1=OptionMenu(lf_pants1,clicked_pants1,*options_pants).place(x=0,y=212)
+    drop_pants2=OptionMenu(lf_pants2,clicked_pants2,*options_pants).place(x=0,y=212)
+    drop_pants3=OptionMenu(lf_pants3,clicked_pants3,*options_pants).place(x=0,y=212)
+    drop_pants4=OptionMenu(lf_pants4,clicked_pants4,*options_pants).place(x=0,y=212)
+    drop_pants5=OptionMenu(lf_pants5,clicked_pants5,*options_pants).place(x=0,y=212)
+    drop_pants6=OptionMenu(lf_pants6,clicked_pants6,*options_pants).place(x=0,y=212)
+    drop_pants7=OptionMenu(lf_pants7,clicked_pants7,*options_pants).place(x=0,y=212)
+    drop_pants8=OptionMenu(lf_pants8,clicked_pants8,*options_pants).place(x=0,y=212)
+    drop_pants9=OptionMenu(lf_pants9,clicked_pants9,*options_pants).place(x=0,y=212)
+    drop_pants10=OptionMenu(lf_pants10,clicked_pants10,*options_pants).place(x=0,y=212)
+
+pants_button=Button(Button_frame,text="Pants",font="times 20 bold",command=pantsCall)
+pants_button.grid(row=0,column=0,padx=10,pady=10)
 
 
 root.mainloop()
