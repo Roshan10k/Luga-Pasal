@@ -179,6 +179,154 @@ def pantsCall():
     drop_pants9=OptionMenu(lf_pants9,clicked_pants9,*options_pants).place(x=0,y=212)
     drop_pants10=OptionMenu(lf_pants10,clicked_pants10,*options_pants).place(x=0,y=212)
 
+    def AddG2():
+        global pants_list
+        quantity = int(quantity_label_pants2["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Skinny Blue Jeans"
+            price_per_item = 1699
+            total_price = quantity * price_per_item
+
+            pants_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddG3():
+        global pants_list
+        quantity = int(quantity_label_pants3["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Baggy Blue Jeans"
+            price_per_item = 1999
+            total_price = quantity * price_per_item
+
+            pants_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddG4():
+        global pants_list
+        quantity = int(quantity_label_pants4["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Baggy Carpenter Black Jeans"
+            price_per_item = 2199
+            total_price = quantity * price_per_item
+
+            pants_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddG5():
+        global pants_list
+        quantity = int(quantity_label_pants5["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Baggy Lightblue Jeans"
+            price_per_item = 1699
+            total_price = quantity * price_per_item
+
+            pants_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddG6():
+        global pants_list
+        quantity = int(quantity_label_pants6["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Brown Chinos Pants"
+            price_per_item = 1999
+            total_price = quantity * price_per_item
+
+            pants_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddG7():
+        global pants_list
+        quantity = int(quantity_label_pants7["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Black Washed Jeans"
+            price_per_item = 2099
+            total_price = quantity * price_per_item
+
+            pants_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddG8():
+        global pants_list
+        quantity = int(quantity_label_pants8["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Blue Skinny Chinos Pants"
+            price_per_item = 1599
+            total_price = quantity * price_per_item
+
+            pants_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddG9():
+        global pants_list
+        quantity = int(quantity_label_pants9["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Khakis Jeans"
+            price_per_item = 2999
+            total_price = quantity * price_per_item
+
+            pants_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddG10():
+        global pants_list
+        quantity = int(quantity_label_pants10["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Blue Plus Size Jeans"
+            price_per_item = 1899
+            total_price = quantity * price_per_item
+
+            pants_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+   
+
+    add_pants1=Button(lf_pants1,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddG1,justify="right").place(x=95,y=240)
+    add_pants2=Button(lf_pants2,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddG2,justify="right").place(x=95,y=240)
+    add_pants3=Button(lf_pants3,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddG3,justify="right").place(x=95,y=240)
+    add_pants4=Button(lf_pants4,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddG4,justify="right").place(x=95,y=240)
+    add_pants5=Button(lf_pants5,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddG5,justify="right").place(x=95,y=240)
+    add_pants6=Button(lf_pants6,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddG6,justify="right").place(x=95,y=240)
+    add_pants7=Button(lf_pants7,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddG7,justify="right").place(x=95,y=240)
+    add_pants8=Button(lf_pants8,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddG8,justify="right").place(x=95,y=240)
+    add_pants9=Button(lf_pants9,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddG9,justify="right").place(x=95,y=240)
+    add_pants10=Button(lf_pants10,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddG10,justify="right").place(x=95,y=240)
+
 pants_button=Button(Button_frame,text="Pants",font="times 20 bold",command=pantsCall)
 pants_button.grid(row=0,column=0,padx=10,pady=10)
 
