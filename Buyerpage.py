@@ -109,6 +109,29 @@ clicked_pants10=StringVar()
 clicked_pants10.set("Size")
 pants_list=[]
 
+#Tshirt Variables
+clicked_Tshirt1=StringVar()
+clicked_Tshirt1.set("Size")
+clicked_Tshirt2=StringVar()
+clicked_Tshirt2.set("Size")
+clicked_Tshirt3=StringVar()
+clicked_Tshirt3.set("Size")
+clicked_Tshirt4=StringVar()
+clicked_Tshirt4.set("Size")
+clicked_Tshirt5=StringVar()
+clicked_Tshirt5.set("Size")
+clicked_Tshirt6=StringVar()
+clicked_Tshirt6.set("Size")
+clicked_Tshirt7=StringVar()
+clicked_Tshirt7.set("Size")
+clicked_Tshirt8=StringVar()
+clicked_Tshirt8.set("Size")
+clicked_Tshirt9=StringVar()
+clicked_Tshirt9.set("Size")
+clicked_Tshirt10=StringVar()
+clicked_Tshirt10.set("Size")
+Tshirt_list=[]
+
 #defining function to hide all frames inside product frame
 def HideAllFrames():
     for widget in Products_frame.winfo_children():
@@ -389,7 +412,17 @@ def pantsCall():
         else:
            messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
    
-
+    price_pants1=Label(lf_pants1,text="Price: Rs.1599",font="arial 9 bold").place(x=5,y=245)
+    price_pants2=Label(lf_pants2,text="Price: Rs.1699",font="arial 9 bold").place(x=5,y=245)
+    price_pants3=Label(lf_pants3,text="Price: Rs.1999",font="arial 9 bold").place(x=5,y=245)
+    price_pants4=Label(lf_pants4,text="Price: Rs.2199",font="arial 9 bold").place(x=5,y=245)
+    price_pants5=Label(lf_pants5,text="Price: Rs.1699",font="arial 9 bold").place(x=5,y=245)
+    price_pants6=Label(lf_pants6,text="Price: Rs.1999",font="arial 9 bold").place(x=5,y=245)
+    price_pants7=Label(lf_pants7,text="Price: Rs.2099",font="arial 9 bold").place(x=5,y=245)
+    price_pants8=Label(lf_pants8,text="Price: Rs.1599",font="arial 9 bold").place(x=5,y=245)
+    price_pants9=Label(lf_pants9,text="Price: Rs.2999",font="arial 9 bold").place(x=5,y=245)
+    price_pants10=Label(lf_pants10,text="Price: Rs.1899",font="arial 9 bold").place(x=5,y=245)
+    
     add_pants1=Button(lf_pants1,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddG1,justify="right").place(x=95,y=240)
     add_pants2=Button(lf_pants2,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddG2,justify="right").place(x=95,y=240)
     add_pants3=Button(lf_pants3,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddG3,justify="right").place(x=95,y=240)
@@ -401,8 +434,300 @@ def pantsCall():
     add_pants9=Button(lf_pants9,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddG9,justify="right").place(x=95,y=240)
     add_pants10=Button(lf_pants10,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddG10,justify="right").place(x=95,y=240)
 
+def TshirtCall():
+    HideAllFrames()
+    Tshirt_Label=Label(Products_frame,text="Tshirt",font="times 18 bold",fg="Red").grid(row=0,column=0,padx=10)
+    lf_Tshirt1=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Tshirt1.place(x=20,y=55,width=200,height=300)
+    lf_Tshirt2=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Tshirt2.place(x=250,y=55,width=200,height=300)
+    lf_Tshirt3=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Tshirt3.place(x=470,y=55,width=200,height=300)
+    lf_Tshirt4=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Tshirt4.place(x=690,y=55,width=200,height=300)
+    lf_Tshirt5=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Tshirt5.place(x=910,y=55,width=200,height=300)
+    lf_Tshirt6=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Tshirt6.place(x=20,y=380,width=200,height=300)
+    lf_Tshirt7=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Tshirt7.place(x=250,y=380,width=200,height=300)
+    lf_Tshirt8=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Tshirt8.place(x=470,y=380,width=200,height=300)
+    lf_Tshirt9=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Tshirt9.place(x=690,y=380,width=200,height=300)
+    lf_Tshirt10=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Tshirt10.place(x=910,y=380,width=200,height=300)
+    label_Tshirt_1=Label(lf_Tshirt1,image=Tshirt1_image,bd=2,justify="center").grid(row=0,column=0)
+    label_Tshirt_2=Label(lf_Tshirt2,image=Tshirt2_image,bd=2,justify="center").grid(row=0,column=0)
+    label_Tshirt_3=Label(lf_Tshirt3,image=Tshirt3_image,bd=2,justify="center").grid(row=0,column=0)
+    label_Tshirt_4=Label(lf_Tshirt4,image=Tshirt4_image,bd=2,justify="center").grid(row=0,column=0)
+    label_Tshirt_5=Label(lf_Tshirt5,image=Tshirt5_image,bd=2,justify="center").grid(row=0,column=0)
+    label_Tshirt_6=Label(lf_Tshirt6,image=Tshirt6_image,bd=2,justify="center").grid(row=0,column=0)
+    label_Tshirt_7=Label(lf_Tshirt7,image=Tshirt7_image,bd=2,justify="center").grid(row=0,column=0,padx=8)
+    label_Tshirt_8=Label(lf_Tshirt8,image=Tshirt8_image,bd=2,justify="center").grid(row=0,column=0,padx=7)
+    label_Tshirt_9=Label(lf_Tshirt9,image=Tshirt9_image,bd=2,justify="center").grid(row=0,column=0)
+    label_Tshirt_10=Label(lf_Tshirt10,image=Tshirt10_image,bd=2,justify="center").grid(row=0,column=0,padx=7)
+    
+    name_Tshirt1=Label(lf_Tshirt1,text="Black Plain Tshirt",font="arial 9",justify="center").grid(row=1,column=0,padx=3)
+    name_Tshirt2=Label(lf_Tshirt2,text="White Printed Tshirt ",font="arial 9",justify="center").grid(row=1,column=0,padx=6)
+    name_Tshirt3=Label(lf_Tshirt3,text="Plain White Tshirt ",font="arial 9",justify="center").grid(row=1,column=0)
+    name_Tshirt4=Label(lf_Tshirt4,text="Naruto Printed Off White Tshirt",font="arial 9",justify="center").grid(row=1,column=0,padx=3)
+    name_Tshirt5=Label(lf_Tshirt5,text="Off white Plain Tshirt",font="arial 9",justify="center").grid(row=1,column=0,padx=9)
+    name_Tshirt6=Label(lf_Tshirt6,text="Stripped Beige Tshirt",font="arial 9",justify="center").grid(row=1,column=0)
+    name_Tshirt7=Label(lf_Tshirt7,text="Blue Full Polo Tshirt",font="arial 9",justify="center").grid(row=2,column=0)
+    name_Tshirt8=Label(lf_Tshirt8,text="Green Round Necked Plain Tshirt",font="arial 9",justify="center").grid(row=3,column=0,padx=6)
+    name_Tshirt9=Label(lf_Tshirt9,text="King Printed White Tshirt",font="arial 9",justify="center").grid(row=1,column=0)
+    name_Tshirt10=Label(lf_Tshirt10,text="Plain Blue Round Neck Tshirt",font="arial 9",justify="center").grid(row=2,column=0)
+    
+    def increase_quantity_Tshirt(label):
+            current_value = int(label["text"])
+            label["text"] = str(current_value + 1)
+
+    def decrease_quantity_Tshirt(label):
+        current_value = int(label["text"])
+        if current_value > 1:
+            label["text"] = str(current_value - 1)
+
+
+    quantity_label_Tshirt1 = Label(lf_Tshirt1, text="1", font=("Helvetica", 16))
+    quantity_label_Tshirt1.place(x=95,y=212)
+    quantity_label_Tshirt2 = Label(lf_Tshirt2, text="1", font=("Helvetica", 16))
+    quantity_label_Tshirt2.place(x=95,y=212)
+    quantity_label_Tshirt3 = Label(lf_Tshirt3, text="1", font=("Helvetica", 16))
+    quantity_label_Tshirt3.place(x=95,y=212)
+    quantity_label_Tshirt4 = Label(lf_Tshirt4, text="1", font=("Helvetica", 16))
+    quantity_label_Tshirt4.place(x=95,y=212)
+    quantity_label_Tshirt5 = Label(lf_Tshirt5, text="1", font=("Helvetica", 16))
+    quantity_label_Tshirt5.place(x=95,y=212)
+    quantity_label_Tshirt6 = Label(lf_Tshirt6, text="1", font=("Helvetica", 16))
+    quantity_label_Tshirt6.place(x=95,y=212)
+    quantity_label_Tshirt7 = Label(lf_Tshirt7, text="1", font=("Helvetica", 16))
+    quantity_label_Tshirt7.place(x=95,y=212)
+    quantity_label_Tshirt8 = Label(lf_Tshirt8, text="1", font=("Helvetica", 16))
+    quantity_label_Tshirt8.place(x=95,y=212)
+    quantity_label_Tshirt9 = Label(lf_Tshirt9, text="1", font=("Helvetica", 16))
+    quantity_label_Tshirt9.place(x=95,y=212)
+    quantity_label_Tshirt10 = Label(lf_Tshirt10, text="1", font=("Helvetica", 16))
+    quantity_label_Tshirt10.place(x=95,y=212)
+    
+    
+
+    increase_button_Tshirt1 = Button(lf_Tshirt1, text="+", command=lambda:increase_quantity_Tshirt(quantity_label_Tshirt1), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Tshirt2 = Button(lf_Tshirt2, text="+", command=lambda:increase_quantity_Tshirt(quantity_label_Tshirt2), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Tshirt3 = Button(lf_Tshirt3, text="+", command=lambda:increase_quantity_Tshirt(quantity_label_Tshirt3), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Tshirt4 = Button(lf_Tshirt4, text="+", command=lambda:increase_quantity_Tshirt(quantity_label_Tshirt4), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Tshirt5 = Button(lf_Tshirt5, text="+", command=lambda:increase_quantity_Tshirt(quantity_label_Tshirt5), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Tshirt6 = Button(lf_Tshirt6, text="+", command=lambda:increase_quantity_Tshirt(quantity_label_Tshirt6), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Tshirt7 = Button(lf_Tshirt7, text="+", command=lambda:increase_quantity_Tshirt(quantity_label_Tshirt7), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Tshirt8 = Button(lf_Tshirt8, text="+", command=lambda:increase_quantity_Tshirt(quantity_label_Tshirt8), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Tshirt9 = Button(lf_Tshirt9, text="+", command=lambda:increase_quantity_Tshirt(quantity_label_Tshirt9), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Tshirt10 = Button(lf_Tshirt10, text="+", command=lambda:increase_quantity_Tshirt(quantity_label_Tshirt10), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+
+
+    decrease_button_Tshirt1 = Button(lf_Tshirt1, text="-", command=lambda:decrease_quantity_Tshirt(quantity_label_Tshirt1), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Tshirt2 = Button(lf_Tshirt2, text="-", command=lambda:decrease_quantity_Tshirt(quantity_label_Tshirt2), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Tshirt3 = Button(lf_Tshirt3, text="-", command=lambda:decrease_quantity_Tshirt(quantity_label_Tshirt3), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Tshirt4 = Button(lf_Tshirt4, text="-", command=lambda:decrease_quantity_Tshirt(quantity_label_Tshirt4), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Tshirt5 = Button(lf_Tshirt5, text="-", command=lambda:decrease_quantity_Tshirt(quantity_label_Tshirt5), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Tshirt6 = Button(lf_Tshirt6, text="-", command=lambda:decrease_quantity_Tshirt(quantity_label_Tshirt6), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Tshirt7 = Button(lf_Tshirt7, text="-", command=lambda:decrease_quantity_Tshirt(quantity_label_Tshirt7), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Tshirt8 = Button(lf_Tshirt8, text="-", command=lambda:decrease_quantity_Tshirt(quantity_label_Tshirt8), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Tshirt9 = Button(lf_Tshirt9, text="-", command=lambda:decrease_quantity_Tshirt(quantity_label_Tshirt9), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Tshirt10 = Button(lf_Tshirt10, text="-", command=lambda:decrease_quantity_Tshirt(quantity_label_Tshirt10), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+
+    options_Tshirt=["S","M","L","XL","XXL"]
+   
+    global clicked_Tshirt1,clicked_Tshirt2,clicked_Tshirt3,clicked_Tshirt4,clicked_Tshirt5
+    global Tshirt_list
+    global clicked_Tshirt6,clicked_Tshirt7,clicked_Tshirt8,clicked_Tshirt9,clicked_Tshirt10
+    drop_Tshirt1=OptionMenu(lf_Tshirt1,clicked_Tshirt1,*options_Tshirt).place(x=0,y=212)
+    drop_Tshirt2=OptionMenu(lf_Tshirt2,clicked_Tshirt2,*options_Tshirt).place(x=0,y=212)
+    drop_Tshirt3=OptionMenu(lf_Tshirt3,clicked_Tshirt3,*options_Tshirt).place(x=0,y=212)
+    drop_Tshirt4=OptionMenu(lf_Tshirt4,clicked_Tshirt4,*options_Tshirt).place(x=0,y=212)
+    drop_Tshirt5=OptionMenu(lf_Tshirt5,clicked_Tshirt5,*options_Tshirt).place(x=0,y=212)
+    drop_Tshirt6=OptionMenu(lf_Tshirt6,clicked_Tshirt6,*options_Tshirt).place(x=0,y=212)
+    drop_Tshirt7=OptionMenu(lf_Tshirt7,clicked_Tshirt7,*options_Tshirt).place(x=0,y=212)
+    drop_Tshirt8=OptionMenu(lf_Tshirt8,clicked_Tshirt8,*options_Tshirt).place(x=0,y=212)
+    drop_Tshirt9=OptionMenu(lf_Tshirt9,clicked_Tshirt9,*options_Tshirt).place(x=0,y=212)
+    drop_Tshirt10=OptionMenu(lf_Tshirt10,clicked_Tshirt10,*options_Tshirt).place(x=0,y=212)
+   
+    def AddE1():
+        global Tshirt_list
+        quantity = int(quantity_label_Tshirt1["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Black Plain Tshirt"
+            price_per_item = 850
+            total_price = quantity * price_per_item
+
+            Tshirt_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+
+    def AddE2():
+        global Tshirt_list
+        quantity = int(quantity_label_Tshirt2["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "White Printed Tshirt"
+            price_per_item = 999
+            total_price = quantity * price_per_item
+
+            Tshirt_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddE3():
+        global Tshirt_list
+        quantity = int(quantity_label_Tshirt3["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Plain White Tshirt"
+            price_per_item = 799
+            total_price = quantity * price_per_item
+
+            Tshirt_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddE4():
+        global Tshirt_list
+        quantity = int(quantity_label_Tshirt4["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Naruto Printed Off White Tshirt"
+            price_per_item = 799
+            total_price = quantity * price_per_item
+
+            Tshirt_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddE5():
+        global Tshirt_list
+        quantity = int(quantity_label_Tshirt5["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Off white Palin Tshirt"
+            price_per_item = 699
+            total_price = quantity * price_per_item
+
+            Tshirt_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddE6():
+        global Tshirt_list
+        quantity = int(quantity_label_Tshirt6["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Stripped Beige Tshirt"
+            price_per_item = 900
+            total_price = quantity * price_per_item
+
+            Tshirt_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddE7():
+        global Tshirt_list
+        quantity = int(quantity_label_Tshirt7["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Blue Full polo Tshirt"
+            price_per_item = 1199
+            total_price = quantity * price_per_item
+
+            Tshirt_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddE8():
+        global Tshirt_list
+        quantity = int(quantity_label_Tshirt8["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Green Round Necked Tshirt"
+            price_per_item = 1099
+            total_price = quantity * price_per_item
+
+            Tshirt_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddE9():
+        global Tshirt_list
+        quantity = int(quantity_label_Tshirt9["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "King Printed White Tshirt"
+            price_per_item = 1299
+            total_price = quantity * price_per_item
+
+            Tshirt_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddE10():
+        global Tshirt_list
+        quantity = int(quantity_label_Tshirt10["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Plain Blue Round Neck Tshirt"
+            price_per_item = 599
+            total_price = quantity * price_per_item
+
+            Tshirt_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+   
+    price_Tshirt1=Label(lf_Tshirt1,text="Price: Rs.850",font="arial 9 bold").place(x=5,y=245)
+    price_Tshirt2=Label(lf_Tshirt2,text="Price: Rs.999",font="arial 9 bold").place(x=5,y=245)
+    price_Tshirt3=Label(lf_Tshirt3,text="Price: Rs.799",font="arial 9 bold").place(x=5,y=245)
+    price_Tshirt4=Label(lf_Tshirt4,text="Price: Rs.799",font="arial 9 bold").place(x=5,y=245)
+    price_Tshirt5=Label(lf_Tshirt5,text="Price: Rs.699",font="arial 9 bold").place(x=5,y=245)
+    price_Tshirt6=Label(lf_Tshirt6,text="Price: Rs.900",font="arial 9 bold").place(x=5,y=245)
+    price_Tshirt7=Label(lf_Tshirt7,text="Price: Rs.1199",font="arial 9 bold").place(x=5,y=245)
+    price_Tshirt8=Label(lf_Tshirt8,text="Price: Rs.1099",font="arial 9 bold").place(x=5,y=245)
+    price_Tshirt9=Label(lf_Tshirt9,text="Price: Rs.1299",font="arial 9 bold").place(x=5,y=245)
+    price_Tshirt10=Label(lf_Tshirt10,text="Price: Rs.599",font="arial 9 bold").place(x=5,y=245)
+
+    add_Tshirt1=Button(lf_Tshirt1,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddE1,justify="right").place(x=95,y=240)
+    add_Tshirt2=Button(lf_Tshirt2,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddE2,justify="right").place(x=95,y=240)
+    add_Tshirt3=Button(lf_Tshirt3,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddE3,justify="right").place(x=95,y=240)
+    add_Tshirt4=Button(lf_Tshirt4,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddE4,justify="right").place(x=95,y=240)
+    add_Tshirt5=Button(lf_Tshirt5,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddE5,justify="right").place(x=95,y=240)
+    add_Tshirt6=Button(lf_Tshirt6,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddE6,justify="right").place(x=95,y=240)
+    add_Tshirt7=Button(lf_Tshirt7,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddE7,justify="right").place(x=95,y=240)
+    add_Tshirt8=Button(lf_Tshirt8,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddE8,justify="right").place(x=95,y=240)
+    add_Tshirt9=Button(lf_Tshirt9,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddE9,justify="right").place(x=95,y=240)
+    add_Tshirt10=Button(lf_Tshirt10,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddE10,justify="right").place(x=95,y=240)
+
 pants_button=Button(Button_frame,text="Pants",font="times 20 bold",command=pantsCall)
 pants_button.grid(row=0,column=0,padx=10,pady=10)
-
+Tshirt_button=Button(Button_frame,text="Tshirt",font="times 20 bold",command=TshirtCall)
+Tshirt_button.grid(row=1,column=0,padx=10,pady=10)
 
 root.mainloop()
