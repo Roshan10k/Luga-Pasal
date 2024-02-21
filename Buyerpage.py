@@ -132,6 +132,30 @@ clicked_Tshirt10=StringVar()
 clicked_Tshirt10.set("Size")
 Tshirt_list=[]
 
+#Shoes variables
+clicked_shoes1=StringVar()
+clicked_shoes1.set("Size")
+clicked_shoes2=StringVar()
+clicked_shoes2.set("Size")
+clicked_shoes3=StringVar()
+clicked_shoes3.set("Size")
+clicked_shoes4=StringVar()
+clicked_shoes4.set("Size")
+clicked_shoes5=StringVar()
+clicked_shoes5.set("Size")
+clicked_shoes6=StringVar()
+clicked_shoes6.set("Size")
+clicked_shoes7=StringVar()
+clicked_shoes7.set("Size")
+clicked_shoes8=StringVar()
+clicked_shoes8.set("Size")
+clicked_shoes9=StringVar()
+clicked_shoes9.set("Size")
+clicked_shoes10=StringVar()
+clicked_shoes10.set("Size")
+shoes_list=[]
+
+
 #defining function to hide all frames inside product frame
 def HideAllFrames():
     for widget in Products_frame.winfo_children():
@@ -724,10 +748,309 @@ def TshirtCall():
     add_Tshirt8=Button(lf_Tshirt8,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddE8,justify="right").place(x=95,y=240)
     add_Tshirt9=Button(lf_Tshirt9,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddE9,justify="right").place(x=95,y=240)
     add_Tshirt10=Button(lf_Tshirt10,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddE10,justify="right").place(x=95,y=240)
+def shoesCall():
+    HideAllFrames()
+    Shoes_Label=Label(Products_frame,text="Shoes",font="times 18 bold",fg="Red").grid(row=0,column=0,padx=10)
+    lf_shoes1=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_shoes1.place(x=20,y=55,width=200,height=300)
+    lf_shoes2=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_shoes2.place(x=250,y=55,width=200,height=300)
+    lf_shoes3=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_shoes3.place(x=470,y=55,width=200,height=300)
+    lf_shoes4=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_shoes4.place(x=690,y=55,width=200,height=300)
+    lf_shoes5=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_shoes5.place(x=910,y=55,width=200,height=300)
+    lf_shoes6=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_shoes6.place(x=20,y=380,width=200,height=300)
+    lf_shoes7=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_shoes7.place(x=250,y=380,width=200,height=300)
+    lf_shoes8=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_shoes8.place(x=470,y=380,width=200,height=300)
+    lf_shoes9=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_shoes9.place(x=690,y=380,width=200,height=300)
+    lf_shoes10=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_shoes10.place(x=910,y=380,width=200,height=300)
+    label_shoes_1=Label(lf_shoes1,image=shoes1_image,bd=2,justify="center").grid(row=0,column=0)
+    label_shoes_2=Label(lf_shoes2,image=shoes2_image,bd=2,justify="center").grid(row=0,column=0,padx=7)
+    label_shoes_3=Label(lf_shoes3,image=shoes3_image,bd=2,justify="center").grid(row=0,column=0)
+    label_shoes_4=Label(lf_shoes4,image=shoes4_image,bd=2,justify="center").grid(row=0,column=0,padx=8)
+    label_shoes_5=Label(lf_shoes5,image=shoes5_image,bd=2,justify="center").grid(row=0,column=0)
+    label_shoes_6=Label(lf_shoes6,image=shoes6_image,bd=2,justify="center").grid(row=0,column=0,padx=8)
+    label_shoes_7=Label(lf_shoes7,image=shoes7_image,bd=2,justify="center").grid(row=0,column=0)
+    label_shoes_8=Label(lf_shoes8,image=shoes8_image,bd=2,justify="center").grid(row=0,column=0,padx=8)
+    label_shoes_9=Label(lf_shoes9,image=shoes9_image,bd=2,justify="center").grid(row=0,column=0)
+    label_shoes_10=Label(lf_shoes10,image=shoes10_image,bd=2,justify="center").grid(row=0,column=0)
+    
+    name_shoes1=Label(lf_shoes1,text="Air Jordan-1-Element",font="arial 9",justify="center").grid(row=1,column=0,padx=13)
+    name_shoes2=Label(lf_shoes2,text="Air Jordan 1 Retro",font="arial 9",justify="center").grid(row=1,column=0)
+    name_shoes3=Label(lf_shoes3,text="Air Max ishodmens",font="arial 9",justify="center").grid(row=1,column=0)
+    name_shoes4=Label(lf_shoes4,text="Air Vapormax Plus",font="arial 9",justify="center").grid(row=1,column=0)
+    name_shoes5=Label(lf_shoes5,text="Air Max 90 goretex",font="arial 9",justify="center").grid(row=1,column=0,padx=14)
+    name_shoes6=Label(lf_shoes6,text="Nike Sb dunk Low retro",font="arial 9",justify="center").grid(row=1,column=0)
+    name_shoes7=Label(lf_shoes7,text="Nike Sb dunk low Panda",font="arial 9",justify="center").grid(row=2,column=0)
+    name_shoes8=Label(lf_shoes8,text="Air Jordan High TopG",font="arial 9",justify="center").grid(row=1,column=0,padx=4)
+    name_shoes9=Label(lf_shoes9,text="Nike Blazer Phantom mid",font="arial 9",justify="center").grid(row=2,column=0)
+    name_shoes10=Label(lf_shoes10,text="Air jordan xxxviii low fun",font="arial 9",justify="center").grid(row=3,column=0)
 
+   
+
+    def increase_quantity_shoes(label):
+            current_value = int(label["text"])
+            label["text"] = str(current_value + 1)
+
+    def decrease_quantity_shoes(label):
+        current_value = int(label["text"])
+        if current_value > 1:
+            label["text"] = str(current_value - 1)
+
+
+    quantity_label_shoes1 = Label(lf_shoes1, text="1", font=("Helvetica", 16))
+    quantity_label_shoes1.place(x=95,y=212)
+    quantity_label_shoes2 = Label(lf_shoes2, text="1", font=("Helvetica", 16))
+    quantity_label_shoes2.place(x=95,y=212)
+    quantity_label_shoes3 = Label(lf_shoes3, text="1", font=("Helvetica", 16))
+    quantity_label_shoes3.place(x=95,y=212)
+    quantity_label_shoes4 = Label(lf_shoes4, text="1", font=("Helvetica", 16))
+    quantity_label_shoes4.place(x=95,y=212)
+    quantity_label_shoes5 = Label(lf_shoes5, text="1", font=("Helvetica", 16))
+    quantity_label_shoes5.place(x=95,y=212)
+    quantity_label_shoes6 = Label(lf_shoes6, text="1", font=("Helvetica", 16))
+    quantity_label_shoes6.place(x=95,y=212)
+    quantity_label_shoes7 = Label(lf_shoes7, text="1", font=("Helvetica", 16))
+    quantity_label_shoes7.place(x=95,y=212)
+    quantity_label_shoes8 = Label(lf_shoes8, text="1", font=("Helvetica", 16))
+    quantity_label_shoes8.place(x=95,y=212)
+    quantity_label_shoes9 = Label(lf_shoes9, text="1", font=("Helvetica", 16))
+    quantity_label_shoes9.place(x=95,y=212)
+    quantity_label_shoes10 = Label(lf_shoes10, text="1", font=("Helvetica", 16))
+    quantity_label_shoes10.place(x=95,y=212)
+    
+    
+
+    increase_button_shoes1 = Button(lf_shoes1, text="+", command=lambda:increase_quantity_shoes(quantity_label_shoes1), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_shoes2 = Button(lf_shoes2, text="+", command=lambda:increase_quantity_shoes(quantity_label_shoes2), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_shoes3 = Button(lf_shoes3, text="+", command=lambda:increase_quantity_shoes(quantity_label_shoes3), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_shoes4 = Button(lf_shoes4, text="+", command=lambda:increase_quantity_shoes(quantity_label_shoes4), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_shoes5 = Button(lf_shoes5, text="+", command=lambda:increase_quantity_shoes(quantity_label_shoes5), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_shoes6 = Button(lf_shoes6, text="+", command=lambda:increase_quantity_shoes(quantity_label_shoes6), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_shoes7 = Button(lf_shoes7, text="+", command=lambda:increase_quantity_shoes(quantity_label_shoes7), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_shoes8 = Button(lf_shoes8, text="+", command=lambda:increase_quantity_shoes(quantity_label_shoes8), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_shoes9 = Button(lf_shoes9, text="+", command=lambda:increase_quantity_shoes(quantity_label_shoes9), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_shoes10 = Button(lf_shoes10, text="+", command=lambda:increase_quantity_shoes(quantity_label_shoes10), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+
+
+    decrease_button_shoes1 = Button(lf_shoes1, text="-", command=lambda:decrease_quantity_shoes(quantity_label_shoes1), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_shoes2 = Button(lf_shoes2, text="-", command=lambda:decrease_quantity_shoes(quantity_label_shoes2), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_shoes3 = Button(lf_shoes3, text="-", command=lambda:decrease_quantity_shoes(quantity_label_shoes3), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_shoes4 = Button(lf_shoes4, text="-", command=lambda:decrease_quantity_shoes(quantity_label_shoes4), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_shoes5 = Button(lf_shoes5, text="-", command=lambda:decrease_quantity_shoes(quantity_label_shoes5), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_shoes6 = Button(lf_shoes6, text="-", command=lambda:decrease_quantity_shoes(quantity_label_shoes6), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_shoes7 = Button(lf_shoes7, text="-", command=lambda:decrease_quantity_shoes(quantity_label_shoes7), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_shoes8 = Button(lf_shoes8, text="-", command=lambda:decrease_quantity_shoes(quantity_label_shoes8), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_shoes9 = Button(lf_shoes9, text="-", command=lambda:decrease_quantity_shoes(quantity_label_shoes9), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_shoes10 = Button(lf_shoes10, text="-", command=lambda:decrease_quantity_shoes(quantity_label_shoes10), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+
+
+
+    
+
+
+    
+    options_shoes=["7","7.5","8","8.5","9","9.5","10"]
+
+    global clicked_shoes1,clicked_shoes2,clicked_shoes3,clicked_shoes4,clicked_shoes5
+    global shoes_list
+    global clicked_shoes6,clicked_shoes7,clicked_shoes8,clicked_shoes9,clicked_shoes10
+    drop_shoes1=OptionMenu(lf_shoes1,clicked_shoes1,*options_shoes).place(x=0,y=212)
+    drop_shoes2=OptionMenu(lf_shoes2,clicked_shoes2,*options_shoes).place(x=0,y=212)
+    drop_shoes3=OptionMenu(lf_shoes3,clicked_shoes3,*options_shoes).place(x=0,y=212)
+    drop_shoes4=OptionMenu(lf_shoes4,clicked_shoes4,*options_shoes).place(x=0,y=212)
+    drop_shoes5=OptionMenu(lf_shoes5,clicked_shoes5,*options_shoes).place(x=0,y=212)
+    drop_shoes6=OptionMenu(lf_shoes6,clicked_shoes6,*options_shoes).place(x=0,y=212)
+    drop_shoes7=OptionMenu(lf_shoes7,clicked_shoes7,*options_shoes).place(x=0,y=212)
+    drop_shoes8=OptionMenu(lf_shoes8,clicked_shoes8,*options_shoes).place(x=0,y=212)
+    drop_shoes9=OptionMenu(lf_shoes9,clicked_shoes9,*options_shoes).place(x=0,y=212)
+    drop_shoes10=OptionMenu(lf_shoes10,clicked_shoes10,*options_shoes).place(x=0,y=212)
+    
+    price_shoes1=Label(lf_shoes1,text="Price: Rs.10,000",font="arial 9 bold").place(x=5,y=245)
+    price_shoes2=Label(lf_shoes2,text="Price: Rs.15,000",font="arial 9 bold").place(x=5,y=245)
+    price_shoes3=Label(lf_shoes3,text="Price: Rs.15,500",font="arial 9 bold").place(x=5,y=245)
+    price_shoes4=Label(lf_shoes4,text="Price: Rs.23,500",font="arial 9 bold").place(x=5,y=245)
+    price_shoes5=Label(lf_shoes5,text="Price: Rs.19,800",font="arial 9 bold").place(x=5,y=245)
+    price_shoes6=Label(lf_shoes6,text="Price: Rs.28,990",font="arial 9 bold").place(x=5,y=245)
+    price_shoes7=Label(lf_shoes7,text="Price: Rs.9,000",font="arial 9 bold").place(x=5,y=245)
+    price_shoes8=Label(lf_shoes8,text="Price: Rs.6,799",font="arial 9 bold").place(x=5,y=245)
+    price_shoes9=Label(lf_shoes9,text="Price: Rs.16,999",font="arial 9 bold").place(x=5,y=245)
+    price_shoes10=Label(lf_shoes10,text="Price: Rs.12,999",font="arial 9 bold").place(x=5,y=245)
+    def AddS1():
+        global shoes_list
+        quantity = int(quantity_label_shoes1["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Air Jordan -1 Element"
+            price_per_item = 10000
+            total_price = quantity * price_per_item
+
+            shoes_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+
+    def AddS2():
+        global shoes_list
+        quantity = int(quantity_label_shoes2["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Air Jordan 1 Retro"
+            price_per_item = 15000
+            total_price = quantity * price_per_item
+
+            shoes_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddS3():
+        global shoes_list
+        quantity = int(quantity_label_shoes3["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Air Max Ishodemns"
+            price_per_item = 15500
+            total_price = quantity * price_per_item
+
+            shoes_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddS4():
+        global shoes_list
+        quantity = int(quantity_label_shoes4["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Air Vapormax Plus"
+            price_per_item = 23500
+            total_price = quantity * price_per_item
+
+            shoes_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddS5():
+        global shoes_list
+        quantity = int(quantity_label_shoes5["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Air Max 90 Goretex"
+            price_per_item = 19800
+            total_price = quantity * price_per_item
+
+            shoes_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddS6():
+        global shoes_list
+        quantity = int(quantity_label_shoes6["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Nike SB dunk low retro"
+            price_per_item = 28990
+            total_price = quantity * price_per_item
+
+            shoes_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddS7():
+        global shoes_list
+        quantity = int(quantity_label_shoes7["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Nike Sb dunk low panda"
+            price_per_item = 9000
+            total_price = quantity * price_per_item
+
+            shoes_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddS8():
+        global shoes_list
+        quantity = int(quantity_label_shoes8["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Air Jordan High TopG"
+            price_per_item = 6799
+            total_price = quantity * price_per_item
+
+            shoes_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddS9():
+        global shoes_list
+        quantity = int(quantity_label_shoes9["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Nike Blazer Phantom Mid"
+            price_per_item = 16999
+            total_price = quantity * price_per_item
+
+            shoes_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddS10():
+        global shoes_list
+        quantity = int(quantity_label_shoes10["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Air Jordan xxxviii Low fun"
+            price_per_item = 12999
+            total_price = quantity * price_per_item
+
+            shoes_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+   
+    add_shoes1=Button(lf_shoes1,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddS1).place(x=98,y=245)
+    add_shoes2=Button(lf_shoes2,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddS2).place(x=98,y=245)
+    add_shoes3=Button(lf_shoes3,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddS3).place(x=98,y=245)
+    add_shoes4=Button(lf_shoes4,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddS4).place(x=98,y=245)
+    add_shoes5=Button(lf_shoes5,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddS5).place(x=98,y=245)
+    add_shoes6=Button(lf_shoes6,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddS6).place(x=98,y=245)
+    add_shoes7=Button(lf_shoes7,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddS7).place(x=98,y=245)
+    add_shoes8=Button(lf_shoes8,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddS8).place(x=98,y=245)
+    add_shoes9=Button(lf_shoes9,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddS9).place(x=98,y=245)
+    add_shoes10=Button(lf_shoes10,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddS10).place(x=98,y=245)
 pants_button=Button(Button_frame,text="Pants",font="times 20 bold",command=pantsCall)
 pants_button.grid(row=0,column=0,padx=10,pady=10)
 Tshirt_button=Button(Button_frame,text="Tshirt",font="times 20 bold",command=TshirtCall)
 Tshirt_button.grid(row=1,column=0,padx=10,pady=10)
+shoes_button=Button(Button_frame,text="Shoes",font="times 20 bold",command=shoesCall)
+shoes_button.grid(row=2,column=0,padx=10,pady=10)
+
 
 root.mainloop()
