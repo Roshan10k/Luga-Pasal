@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import messagebox
 from PIL import Image, ImageTk
-from tkmacosx import Button
+# from tkmacosx import Button
 from datetime import datetime
 
 
@@ -154,6 +154,30 @@ clicked_shoes9.set("Size")
 clicked_shoes10=StringVar()
 clicked_shoes10.set("Size")
 shoes_list=[]
+
+#Hoodie variables
+clicked_Hoodie1=StringVar()
+clicked_Hoodie1.set("Size")
+clicked_Hoodie2=StringVar()
+clicked_Hoodie2.set("Size")
+clicked_Hoodie3=StringVar()
+clicked_Hoodie3.set("Size")
+clicked_Hoodie4=StringVar()
+clicked_Hoodie4.set("Size")
+clicked_Hoodie5=StringVar()
+clicked_Hoodie5.set("Size")
+clicked_Hoodie6=StringVar()
+clicked_Hoodie6.set("Size")
+clicked_Hoodie7=StringVar()
+clicked_Hoodie7.set("Size")
+clicked_Hoodie8=StringVar()
+clicked_Hoodie8.set("Size")
+clicked_Hoodie9=StringVar()
+clicked_Hoodie9.set("Size")
+clicked_Hoodie10=StringVar()
+clicked_Hoodie10.set("Size")
+
+Hoodie_list=[]
 
 
 #defining function to hide all frames inside product frame
@@ -1045,12 +1069,319 @@ def shoesCall():
     add_shoes8=Button(lf_shoes8,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddS8).place(x=98,y=245)
     add_shoes9=Button(lf_shoes9,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddS9).place(x=98,y=245)
     add_shoes10=Button(lf_shoes10,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddS10).place(x=98,y=245)
+
+def HoodieCall():
+    HideAllFrames()
+    Hoodie_Label=Label(Products_frame,text="Hoodie",font="times 18 bold",fg="Red").grid(row=0,column=0,padx=20)
+    lf_Hoodie1=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Hoodie1.place(x=20,y=55,width=200,height=300)
+    lf_Hoodie2=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Hoodie2.place(x=250,y=55,width=200,height=300)
+    lf_Hoodie3=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Hoodie3.place(x=470,y=55,width=200,height=300)
+    lf_Hoodie4=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Hoodie4.place(x=690,y=55,width=200,height=300)
+    lf_Hoodie5=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Hoodie5.place(x=910,y=55,width=200,height=300)
+    lf_Hoodie6=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Hoodie6.place(x=20,y=380,width=200,height=300)
+    lf_Hoodie7=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Hoodie7.place(x=250,y=380,width=200,height=300)
+    lf_Hoodie8=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Hoodie8.place(x=470,y=380,width=200,height=300)
+    lf_Hoodie9=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Hoodie9.place(x=690,y=380,width=200,height=300)
+    lf_Hoodie10=LabelFrame(Products_frame,bd=2,relief="flat")
+    lf_Hoodie10.place(x=910,y=380,width=200,height=300)
+    label_Hoodie_1=Label(lf_Hoodie1,image=Hoodie1_image,bd=2,justify="center").grid(row=0,column=0)
+    label_Hoodie_2=Label(lf_Hoodie2,image=Hoodie2_image,bd=2,justify="center").grid(row=0,column=0,padx=8)
+    label_Hoodie_3=Label(lf_Hoodie3,image=Hoodie3_image,bd=2,justify="center").grid(row=0,column=0,padx=8)
+    label_Hoodie_4=Label(lf_Hoodie4,image=Hoodie4_image,bd=2,justify="center").grid(row=0,column=0,padx=8)
+    label_Hoodie_5=Label(lf_Hoodie5,image=Hoodie5_image,bd=2,justify="center").grid(row=0,column=0,padx=8)
+    label_Hoodie_6=Label(lf_Hoodie6,image=Hoodie6_image,bd=2,justify="center").grid(row=0,column=0)
+    label_Hoodie_7=Label(lf_Hoodie7,image=Hoodie7_image,bd=2,justify="center").grid(row=0,column=0)
+    label_Hoodie_8=Label(lf_Hoodie8,image=Hoodie8_image,bd=2,justify="center").grid(row=0,column=0,padx=8)
+    label_Hoodie_9=Label(lf_Hoodie9,image=Hoodie9_image,bd=2,justify="center").grid(row=0,column=0,padx=8)
+    label_Hoodie_10=Label(lf_Hoodie10,image=Hoodie10_image,bd=2,justify="center").grid(row=0,column=0,padx=8)
+    
+    name_Hoodie1=Label(lf_Hoodie1,text="White Plain Fleece Hoodie",font="arial 9",justify="center").grid(row=1,column=0,padx=10)
+    name_Hoodie2=Label(lf_Hoodie2,text="Off white Fleece Hoodie",font="arial 9",justify="center").grid(row=1,column=0)
+    name_Hoodie3=Label(lf_Hoodie3,text="Essentials Off white Hoodie",font="arial 9",justify="center").grid(row=2,column=0)
+    name_Hoodie4=Label(lf_Hoodie4,text="Dual color printed Hoodie",font="arial 9",justify="center").grid(row=1,column=0)
+    name_Hoodie5=Label(lf_Hoodie5,text="Human Embroided Brown Hoodie",font="arial 9",justify="center").grid(row=2,column=0)
+    name_Hoodie6=Label(lf_Hoodie6,text="Red & Black Fire hoodie",font="arial 9",justify="center").grid(row=1,column=0)
+    name_Hoodie7=Label(lf_Hoodie7,text="Plain Blue Hoodie",font="arial 9",justify="center").grid(row=2,column=0)
+    name_Hoodie8=Label(lf_Hoodie8,text="Spiderman Black Hoodie Limited Edition",font="arial 9",justify="center").grid(row=3,column=0)
+    name_Hoodie9=Label(lf_Hoodie9,text="Female Rose hoodie",font="arial 9",justify="center").grid(row=1,column=0)
+    name_Hoodie10=Label(lf_Hoodie10,text="Couple Hoodie Winter Edition",font="arial 9",justify="center").grid(row=2,column=0)
+    
+    
+
+    def increase_quantity_Hoodie(label):
+            current_value = int(label["text"])
+            label["text"] = str(current_value + 1)
+
+    def decrease_quantity_Hoodie(label):
+        current_value = int(label["text"])
+        if current_value > 1:
+            label["text"] = str(current_value - 1)
+
+
+    quantity_label_Hoodie1 = Label(lf_Hoodie1, text="1", font=("Helvetica", 16))
+    quantity_label_Hoodie1.place(x=95,y=212)
+    quantity_label_Hoodie2 = Label(lf_Hoodie2, text="1", font=("Helvetica", 16))
+    quantity_label_Hoodie2.place(x=95,y=212)
+    quantity_label_Hoodie3 = Label(lf_Hoodie3, text="1", font=("Helvetica", 16))
+    quantity_label_Hoodie3.place(x=95,y=212)
+    quantity_label_Hoodie4 = Label(lf_Hoodie4, text="1", font=("Helvetica", 16))
+    quantity_label_Hoodie4.place(x=95,y=212)
+    quantity_label_Hoodie5 = Label(lf_Hoodie5, text="1", font=("Helvetica", 16))
+    quantity_label_Hoodie5.place(x=95,y=212)
+    quantity_label_Hoodie6 = Label(lf_Hoodie6, text="1", font=("Helvetica", 16))
+    quantity_label_Hoodie6.place(x=95,y=212)
+    quantity_label_Hoodie7 = Label(lf_Hoodie7, text="1", font=("Helvetica", 16))
+    quantity_label_Hoodie7.place(x=95,y=212)
+    quantity_label_Hoodie8 = Label(lf_Hoodie8, text="1", font=("Helvetica", 16))
+    quantity_label_Hoodie8.place(x=95,y=212)
+    quantity_label_Hoodie9 = Label(lf_Hoodie9, text="1", font=("Helvetica", 16))
+    quantity_label_Hoodie9.place(x=95,y=212)
+    quantity_label_Hoodie10 = Label(lf_Hoodie10, text="1", font=("Helvetica", 16))
+    quantity_label_Hoodie10.place(x=95,y=212)
+    
+    
+
+    increase_button_Hoodie1 = Button(lf_Hoodie1, text="+", command=lambda:increase_quantity_Hoodie(quantity_label_Hoodie1), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Hoodie2 = Button(lf_Hoodie2, text="+", command=lambda:increase_quantity_Hoodie(quantity_label_Hoodie2), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Hoodie3 = Button(lf_Hoodie3, text="+", command=lambda:increase_quantity_Hoodie(quantity_label_Hoodie3), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Hoodie4 = Button(lf_Hoodie4, text="+", command=lambda:increase_quantity_Hoodie(quantity_label_Hoodie4), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Hoodie5 = Button(lf_Hoodie5, text="+", command=lambda:increase_quantity_Hoodie(quantity_label_Hoodie5), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Hoodie6 = Button(lf_Hoodie6, text="+", command=lambda:increase_quantity_Hoodie(quantity_label_Hoodie6), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Hoodie7 = Button(lf_Hoodie7, text="+", command=lambda:increase_quantity_Hoodie(quantity_label_Hoodie7), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Hoodie8 = Button(lf_Hoodie8, text="+", command=lambda:increase_quantity_Hoodie(quantity_label_Hoodie8), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Hoodie9 = Button(lf_Hoodie9, text="+", command=lambda:increase_quantity_Hoodie(quantity_label_Hoodie9), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+    increase_button_Hoodie10 = Button(lf_Hoodie10, text="+", command=lambda:increase_quantity_Hoodie(quantity_label_Hoodie10), font=("Helvetica", 12),width=20,padx=5).place(x=75, y=212)
+
+
+    decrease_button_Hoodie1 = Button(lf_Hoodie1, text="-", command=lambda:decrease_quantity_Hoodie(quantity_label_Hoodie1), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Hoodie2 = Button(lf_Hoodie2, text="-", command=lambda:decrease_quantity_Hoodie(quantity_label_Hoodie2), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Hoodie3 = Button(lf_Hoodie3, text="-", command=lambda:decrease_quantity_Hoodie(quantity_label_Hoodie3), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Hoodie4 = Button(lf_Hoodie4, text="-", command=lambda:decrease_quantity_Hoodie(quantity_label_Hoodie4), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Hoodie5 = Button(lf_Hoodie5, text="-", command=lambda:decrease_quantity_Hoodie(quantity_label_Hoodie5), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Hoodie6 = Button(lf_Hoodie6, text="-", command=lambda:decrease_quantity_Hoodie(quantity_label_Hoodie6), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Hoodie7 = Button(lf_Hoodie7, text="-", command=lambda:decrease_quantity_Hoodie(quantity_label_Hoodie7), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Hoodie8 = Button(lf_Hoodie8, text="-", command=lambda:decrease_quantity_Hoodie(quantity_label_Hoodie8), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Hoodie9 = Button(lf_Hoodie9, text="-", command=lambda:decrease_quantity_Hoodie(quantity_label_Hoodie9), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+    decrease_button_Hoodie10 = Button(lf_Hoodie10, text="-", command=lambda:decrease_quantity_Hoodie(quantity_label_Hoodie10), font=("Helvetica", 12), width=20,padx=5).place(x=110, y=212)  
+
+
+
+    options_Hoodie=["S","M","L","XL","XXL"]
+    global clicked_Hoodie1,clicked_Hoodie2,clicked_Hoodie3,clicked_Hoodie4,clicked_Hoodie5
+    global Hoodie_list
+    global clicked_Hoodie6,clicked_Hoodie7,clicked_Hoodie8,clicked_Hoodie9,clicked_Hoodie10
+    drop_Hoodie1=OptionMenu(lf_Hoodie1,clicked_Hoodie1,*options_Hoodie).place(x=0,y=212)
+    drop_Hoodie2=OptionMenu(lf_Hoodie2,clicked_Hoodie2,*options_Hoodie).place(x=0,y=212)
+    drop_Hoodie3=OptionMenu(lf_Hoodie3,clicked_Hoodie3,*options_Hoodie).place(x=0,y=212)
+    drop_Hoodie4=OptionMenu(lf_Hoodie4,clicked_Hoodie4,*options_Hoodie).place(x=0,y=212)
+    drop_Hoodie5=OptionMenu(lf_Hoodie5,clicked_Hoodie5,*options_Hoodie).place(x=0,y=212)
+    drop_Hoodie6=OptionMenu(lf_Hoodie6,clicked_Hoodie6,*options_Hoodie).place(x=0,y=212)
+    drop_Hoodie7=OptionMenu(lf_Hoodie7,clicked_Hoodie7,*options_Hoodie).place(x=0,y=212)
+    drop_Hoodie8=OptionMenu(lf_Hoodie8,clicked_Hoodie8,*options_Hoodie).place(x=0,y=212)
+    drop_Hoodie9=OptionMenu(lf_Hoodie9,clicked_Hoodie9,*options_Hoodie).place(x=0,y=212)
+    drop_Hoodie10=OptionMenu(lf_Hoodie10,clicked_Hoodie10,*options_Hoodie).place(x=0,y=212)
+    
+
+    price_Hoodie1=Label(lf_Hoodie1,text="Price: Rs.1850",font="arial 9 bold").place(x=5,y=245)
+    price_Hoodie2=Label(lf_Hoodie2,text="Price: Rs.1999",font="arial 9 bold").place(x=5,y=245)
+    price_Hoodie3=Label(lf_Hoodie3,text="Price: Rs.1799",font="arial 9 bold").place(x=5,y=245)
+    price_Hoodie4=Label(lf_Hoodie4,text="Price: Rs.1799",font="arial 9 bold").place(x=5,y=245)
+    price_Hoodie5=Label(lf_Hoodie5,text="Price: Rs.1699",font="arial 9 bold").place(x=5,y=245)
+    price_Hoodie6=Label(lf_Hoodie6,text="Price: Rs.1900",font="arial 9 bold").place(x=5,y=245)
+    price_Hoodie7=Label(lf_Hoodie7,text="Price: Rs.2199",font="arial 9 bold").place(x=5,y=245)
+    price_Hoodie8=Label(lf_Hoodie8,text="Price: Rs.1899",font="arial 9 bold").place(x=5,y=245)
+    price_Hoodie9=Label(lf_Hoodie9,text="Price: Rs.1599",font="arial 9 bold").place(x=5,y=245)
+    price_Hoodie10=Label(lf_Hoodie10,text="Price: Rs.2599",font="arial 9 bold").place(x=5,y=245)
+    
+    def AddF1():
+        global Hoodie_list
+        quantity = int(quantity_label_Hoodie1["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "White Plain Fleece Hoodie"
+            price_per_item = 1850
+            total_price = quantity * price_per_item
+
+            Hoodie_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+
+    
+    def AddF2():
+        global Hoodie_list
+        quantity = int(quantity_label_Hoodie2["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Off white Fleece Hoodie"
+            price_per_item = 1999
+            total_price = quantity * price_per_item
+
+            Hoodie_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    
+    def AddF3():
+        global Hoodie_list
+        quantity = int(quantity_label_Hoodie3["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Essentials Off White Hoodie"
+            price_per_item = 1799
+            total_price = quantity * price_per_item
+
+            Hoodie_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    def AddF4():
+        global Hoodie_list
+        quantity = int(quantity_label_Hoodie4["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Dual Color Printed Hoodie"
+            price_per_item = 1799
+            total_price = quantity * price_per_item
+
+            Hoodie_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    
+    
+    def AddF5():
+        global Hoodie_list
+        quantity = int(quantity_label_Hoodie5["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Human Embroided Brown Hoodie"
+            price_per_item = 1699
+            total_price = quantity * price_per_item
+
+            Hoodie_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    
+    def AddF6():
+        global Hoodie_list
+        quantity = int(quantity_label_Hoodie6["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Red & Black Fire Hoodie"
+            price_per_item = 1900
+            total_price = quantity * price_per_item
+
+            Hoodie_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    
+    def AddF7():
+        global Hoodie_list
+        quantity = int(quantity_label_Hoodie7["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Plain Blue Hoodie"
+            price_per_item = 2199
+            total_price = quantity * price_per_item
+
+            Hoodie_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    
+    def AddF8():
+        global Hoodie_list
+        quantity = int(quantity_label_Hoodie8["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Spiderman Balck Hoodie Limited Edition"
+            price_per_item = 1899
+            total_price = quantity * price_per_item
+
+            Hoodie_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    
+    def AddF9():
+        global Hoodie_list
+        quantity = int(quantity_label_Hoodie9["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Female Rose Hoodie"
+            price_per_item = 1599
+            total_price = quantity * price_per_item
+
+            Hoodie_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    
+    
+    def AddF10():
+        global Hoodie_list
+        quantity = int(quantity_label_Hoodie10["text"])
+        op=messagebox.askyesno("Purchase Confirmation","Are you sure that you want to add this item to the cart?")
+        if op:
+            product_name = "Couple Hoodie Winter Edition"
+            price_per_item = 2599
+            total_price = quantity * price_per_item
+
+            Hoodie_list.append([product_name, total_price,quantity, f"Rs.{total_price}", Spaces(40 - len(product_name))])
+
+            messagebox.showinfo("Product Status", f"{product_name} ({quantity}) added to the cart.")
+            
+        else:
+           messagebox.showinfo("Product Status", f"{product_name} is not added to the cart.")
+    
+    add_Hoodie1=Button(lf_Hoodie1,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddF1,justify="right").place(x=95,y=240)
+    add_Hoodie2=Button(lf_Hoodie2,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddF2,justify="right").place(x=95,y=240)
+    add_Hoodie3=Button(lf_Hoodie3,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddF3,justify="right").place(x=95,y=240)
+    add_Hoodie4=Button(lf_Hoodie4,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddF4,justify="right").place(x=95,y=240)
+    add_Hoodie5=Button(lf_Hoodie5,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddF5,justify="right").place(x=95,y=240)
+    add_Hoodie6=Button(lf_Hoodie6,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddF6,justify="right").place(x=95,y=240)
+    add_Hoodie7=Button(lf_Hoodie7,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddF7,justify="right").place(x=95,y=240)
+    add_Hoodie8=Button(lf_Hoodie8,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddF8,justify="right").place(x=95,y=240)
+    add_Hoodie9=Button(lf_Hoodie9,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddF9,justify="right").place(x=95,y=240)
+    add_Hoodie10=Button(lf_Hoodie10,text="Add Item",bg="green",fg="black",font="times 9 bold",command=AddF10,justify="right").place(x=95,y=240)
 pants_button=Button(Button_frame,text="Pants",font="times 20 bold",command=pantsCall)
 pants_button.grid(row=0,column=0,padx=10,pady=10)
 Tshirt_button=Button(Button_frame,text="Tshirt",font="times 20 bold",command=TshirtCall)
 Tshirt_button.grid(row=1,column=0,padx=10,pady=10)
 shoes_button=Button(Button_frame,text="Shoes",font="times 20 bold",command=shoesCall)
 shoes_button.grid(row=2,column=0,padx=10,pady=10)
+Hoodie_button=Button(Button_frame,text="Hoodie",font="times 20 bold",command=HoodieCall)
+Hoodie_button.grid(row=2,column=0,padx=10,pady=10)
 
 
 root.mainloop()
