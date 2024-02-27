@@ -1,6 +1,6 @@
 from tkinter import *
 from PIL import ImageTk, Image
-from tkmacosx import Button
+from tkinter import Button
 import mysql.connector
 
 def toggle_password(password_entry, confirm_password_entry, toggle_button):
@@ -49,13 +49,18 @@ def register_user():
         except mysql.connector.Error as err:
             result_label.config(text=f"Error: {err}", fg="red")
 
+def go_back():
+    root.destroy()
+    import loginseller
+            
+
 # Main window
 root = Tk()
 root.title("Seller Registration Form")
 root.geometry("1440x1080")
 
 # Background image
-bg_image = PhotoImage(file="Images/Signupseller.png")  
+bg_image = PhotoImage(file="Luga-Pasal\Images\Signupseller.png")  
 bg_label = Label(root, image=bg_image)
 bg_label.place(relwidth=1, relheight=1)
 
@@ -83,8 +88,8 @@ password_entry = Entry(register_frame, show="*", font=font_style, width=30)
 password_entry.grid(row=5, column=0, padx=10, pady=10, columnspan=2, sticky="w")
 
 # Toggle Password button for Password entry
-eye_show_icon = PhotoImage(file="Images/eye_open.png") 
-eye_hide_icon = PhotoImage(file="Images/eye-close.png") 
+eye_show_icon = PhotoImage(file="Luga-Pasal\Images\eye_open.png") 
+eye_hide_icon = PhotoImage(file="Luga-Pasal\Images\eye-close.png") 
 toggle_button_password = Button(register_frame, command=lambda: toggle_password(password_entry, confirm_password_entry, toggle_button_password), image=eye_show_icon, bg="white")
 toggle_button_password.grid(row=5, column=2, pady=10)
 
@@ -104,7 +109,7 @@ result_label = Label(register_frame, text="", bg="white", font=font_style)
 result_label.grid(row=9, column=0, columnspan=1, pady=10)
 
 # Creating go back to login button 
-goback_button = Button(register_frame, text="Back", padx=5, pady=2, font=font_style, bg="grey")
+goback_button = Button(register_frame, text="Back", padx=5, pady=2, font=font_style, bg="grey",command=go_back)
 goback_button.grid(row=9, column=2, pady=10, columnspan=3)
 
 root.mainloop()

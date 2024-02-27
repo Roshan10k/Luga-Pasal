@@ -52,7 +52,7 @@ def register_user():
 def go_back():
     root.destroy()
     import loginbuyer
-    loginbuyer.open()
+    
 
 # Main window
 root = Tk()

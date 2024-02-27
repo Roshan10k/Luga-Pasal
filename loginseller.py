@@ -43,7 +43,7 @@ def login_user():
         if user_data:
             root.destroy()
             import Sellerpage
-            Sellerpage.open()
+            
            
         else:
             login_result_label.config(text="Invalid username or password", fg="red")
@@ -55,7 +55,7 @@ def login_user():
 def register_user():
   root.destroy()
   import registerseller
-  registerseller.open()
+ 
 
 
 root=Tk()
