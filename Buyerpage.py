@@ -19,10 +19,14 @@ bg_image = PhotoImage(file="Images/mainpage.png")
 bg_label = Label(root, image=bg_image)
 bg_label.place(relwidth=1, relheight=1)
 
+#Productframe Image
+productframe_image=PhotoImage(file="Luga-Pasal\Images\PRODUCTFRAME.jpg")
+
 #creating frames inside root
 Products_frame=LabelFrame(root,bd=2,relief="flat",text="Products",font="arial 16 bold",fg="Red")
 Products_frame.place(x=310,y=80,width=1200,height=720)
-
+productframe_bg=Label(Products_frame,image=productframe_image)
+productframe_bg.place(relheight=1,relwidth=1)
 
 Button_frame=LabelFrame(root,bd=2,relief="groove")
 Button_frame.place(x=0,y=80,width=310,height=350)
