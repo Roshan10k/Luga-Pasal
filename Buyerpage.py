@@ -19,15 +19,6 @@ bg_image = PhotoImage(file="Images/mainpage.png")
 bg_label = Label(root, image=bg_image)
 bg_label.place(relwidth=1, relheight=1)
 
-
-# #creating a heading
-# Heading=LabelFrame(root,bd=2,relief="flat",bg="light yellow")
-# Heading.place(x=0,y=0,width=1440,height=55)
-# image_logo=ImageTk.PhotoImage(Image.open("Images/logo.png"))
-# heading_bg=Label(Heading, image=bg_image).place(relheight=1,relwidth=1)
-# name=Label(Heading,text="Luga Pasal",font=("Comic Sans MS",28,"bold"),fg="black").grid(row=0,column=1)
-# tagline=Label(Heading,text="Be fashionable!",font="magneto 16 italic",fg="Red").grid(row=0,column=2,padx=280)
-
 #creating frames inside root
 Products_frame=LabelFrame(root,bd=2,relief="flat",text="Products",font="arial 16 bold",fg="Red")
 Products_frame.place(x=310,y=80,width=1200,height=720)
@@ -214,6 +205,24 @@ def HideAllFrames():
     for widget in Products_frame.winfo_children():
         widget.destroy()
 
+# defining space function to create spaces where needed
+def Spaces(n,s1=" "):
+    s=""
+    for i in range(n):
+        s+=s1
+    return s
+#defining function for save invoice
+def save_invoice(text):
+    op=messagebox.askyesno("Invoice Saving Confirmation","Do you want to save the invoice in a file?")
+    if op:
+        t=datetime.now()
+        s=str(t.day)+str(t.month)+str(t.year)+str(t.hour)+str(t.minute)+str(t.second)
+        f=open("Invoices/"+s+".doc","w")
+        f.write(text)
+        f.close()
+        messagebox.showinfo("Invoice Saving Status","Invoice is saved successfully as a text document with name "+s+".txt")
+    else:
+        messagebox.showinfo("Invoice Saving Status","The invoice is not saved into a file.")
 #defining pants and its attributes
 def pantsCall():
    
@@ -1706,8 +1715,90 @@ shoes_button.grid(row=2,column=0,padx=10,pady=10)
 Hoodie_button=Button(Button_frame,text="Hoodie",font="times 20 bold",command=HoodieCall)
 Hoodie_button.grid(row=3,column=0,padx=10,pady=10)
 
-Jacket_button=Button(Button_frame,text="Jacket",font="time 20 bold",command=JacketCall)
+Jacket_button=Button(Button_frame,text="Jacket",font="times 20 bold",command=JacketCall)
 Jacket_button.grid(row=4,column=0,padx=10,pady=10)
 
+def Bill():
+    op=messagebox.askyesno("Bill Generation Confirmation","Products cannot be added or removed during bill generation. Are you sure that you have finished shopping?")
+    if op:
+        Products_frame.destroy()
+        Button_frame.destroy()
+        bill_gen_button.destroy()
+        pants_price=0
+        Tshirt_price=0
+        shoes_price=0
+        Hoodie_price=0
+        Jacket_price=0
+        for i in range(len(pants_list)):
+            pants_price+=pants_list[i][1]
+        for i in range(len(Tshirt_list)):
+            Tshirt_price+=Tshirt_list[i][1]
+        for i in range(len(shoes_list)):
+            shoes_price+=shoes_list[i][1]
+        for i in range(len(Hoodie_list)):
+            Hoodie_price+=Hoodie_list[i][1]
+        for i in range(len(Jacket_list)):
+            Jacket_price+=Jacket_list[i][1]
+        total_price=pants_price+Tshirt_price+shoes_price+Hoodie_price+Jacket_price
+        bill_area=LabelFrame(root,bd=2,relief="groove")
+        bill_area.place(x=350,y=90,width=750,height=600)
+        bill_title=Label(bill_area,text="INVOICE",font="arial 15 bold",bd=4,relief="groove").pack(fill=X)
+        scroll_y=Scrollbar(bill_area,orient=VERTICAL)
+        bill_txt_area=Text(bill_area,yscrollcommand=scroll_y.set)
+        scroll_y.pack(side=RIGHT,fill=Y)
+        scroll_y.config(command=bill_txt_area.yview)
+        bill_txt_area.pack(fill=BOTH,expand=1)
+       
+        bill_txt_area.insert(END,Spaces(40)+"Luga Pasal\n"+Spaces(90,'*')+"\n")
+        
+        if len(Tshirt_list)>0:
+                bill_txt_area.insert(END,"Tshirt Product(s)\n\nProduct Name"+" " * 28+"Price\n")
+                for i in Tshirt_list:
+                    product_name,price=i[0],i[1]
+                    line=f"{product_name} {Spaces(28-len(product_name))} Rs.{price}\n"
+                    bill_txt_area.insert(END,line)
+                    total_line=f"\nTotal Tshirts Price : Rs.{Tshirt_price}\n{Spaces(90, '*')}\n"
+                bill_txt_area.insert(END,total_line)
+        if len(pants_list) > 0:
+                bill_txt_area.insert(END, "Pants Product(s)\n\nProduct Name" + " " * 28 + "Price\n")
+                for i in pants_list:
+                    product_name, price = i[0], i[1]
+                    line = f"{product_name} {Spaces(28 - len(product_name))} Rs.{price}\n"
+                    bill_txt_area.insert(END, line)
+                    total_line = f"\nTotal pants Price : Rs.{pants_price}\n{Spaces(90, '*')}\n"
+                bill_txt_area.insert(END, total_line)
+        if len(shoes_list)>0:
+                bill_txt_area.insert(END,"Shoes Product(s)\n\nProduct Name"+" " * 28+"Price\n")
+                for i in shoes_list:
+                    product_name,price=i[0],i[1]
+                    line=f"{product_name} {Spaces(28-len(product_name))} Rs.{price}\n"
+                    bill_txt_area.insert(END,line)
+                    total_line=f"\nTotal Shoes Price : Rs.{shoes_price}\n{Spaces(90, '*')}\n"
+                bill_txt_area.insert(END,total_line)
+        if len(Hoodie_list)>0:
+                bill_txt_area.insert(END,"Hoodie Product(s)\n\nProduct Name"+" " * 28+"Price\n")
+                for i in Hoodie_list:
+                    product_name,price=i[0],i[1]
+                    line=f"{product_name} {Spaces(28-len(product_name))} Rs.{price}\n"
+                    bill_txt_area.insert(END,line)
+                    total_line=f"\nTotal Hoodie Price : Rs.{Hoodie_price}\n{Spaces(90, '*')}\n"
+                bill_txt_area.insert(END,total_line)
+        if len(Jacket_list)>0:
+                bill_txt_area.insert(END,"Jacket Product(s)\n\nProduct Name"+" " * 28+"Price\n")
+                for i in Jacket_list:
+                    product_name,price=i[0],i[1]
+                    line=f"{product_name} {Spaces(28-len(product_name))} Rs.{price}\n"
+                    bill_txt_area.insert(END,line)
+                    total_line=f"\nTotal Jacket Price : Rs.{Jacket_price}\n{Spaces(90, '*')}\n"
+                bill_txt_area.insert(END,total_line)
+        bill_txt_area.insert(END,"\nTotal Price= Rs."+str(total_price))
+        
+        save_button=Button(root,relief="groove",text="Save Invoice",bg="green",command=lambda:save_invoice(bill_txt_area.get("1.0",END)))
+        save_button.place(x=1120,y=600)
+    else:
+        messagebox.showinfo("Bill Generation Confirmation","You can continue shopping now.")
+
+bill_gen_button=Button(root,text="Proceed to Checkout",font="times 17 bold",bg="white",fg="black",activebackground="purple",command=Bill)
+bill_gen_button.place(x=1200,y=25)
 
 root.mainloop()
