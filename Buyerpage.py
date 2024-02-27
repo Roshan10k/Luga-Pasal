@@ -20,7 +20,7 @@ bg_label = Label(root, image=bg_image)
 bg_label.place(relwidth=1, relheight=1)
 
 #Productframe Image
-productframe_image=PhotoImage(file="Luga-Pasal\Images\PRODUCTFRAME.jpg")
+productframe_image=ImageTk.PhotoImage(Image.open("Luga-Pasal\Images\PRODUCTFRAME.jpg"))
 
 #creating frames inside root
 Products_frame=LabelFrame(root,bd=2,relief="flat",text="Products",font="arial 16 bold",fg="Red")
