@@ -36,7 +36,7 @@ def register_user():
             cursor = connection.cursor()
 
             # Insert user information into the 'seller' table
-            insert_query = "INSERT INTO Seller (Username, Full_Name, Password) VALUES (%s, %s, %s)"
+            insert_query = "INSERT INTO Buyer(Username, Full_Name, Password) VALUES (%s, %s, %s)"
             user_data = (username, full_name, password)
             cursor.execute(insert_query, user_data)
 
@@ -49,9 +49,14 @@ def register_user():
         except mysql.connector.Error as err:
             result_label.config(text=f"Error: {err}", fg="red")
 
+def go_back():
+    root.destroy()
+    import loginbuyer
+    loginbuyer.open()
+
 # Main window
 root = Tk()
-root.title("Registration Form")
+root.title(" Buyer Registration Form")
 root.geometry("1440x1080")
 
 # Background image
@@ -89,7 +94,7 @@ toggle_button_password = Button(register_frame, command=lambda: toggle_password(
 toggle_button_password.grid(row=5, column=2, pady=10)
 
 # Confirm Password entry
-Label(register_frame, text="Confirm Password:", bg="white", font=font_style).grid(row=6, column=0, padx=10, pady=10, sticky="w" )
+Label(register_frame, text="Confirm Password", bg="white", font=font_style).grid(row=6, column=0, padx=10, pady=10, sticky="w" )
 confirm_password_entry = Entry(register_frame, show="*", font=font_style, width=30)
 confirm_password_entry.grid(row=7, column=0, padx=10, pady=10, columnspan=2, sticky="w")
 
@@ -104,7 +109,7 @@ result_label = Label(register_frame, text="", bg="white", font=font_style)
 result_label.grid(row=9, column=0, columnspan=1, pady=10)
 
 # Creating go back to login button 
-goback_button = Button(register_frame, text="Back", padx=5, pady=2, font=font_style, bg="grey")
+goback_button = Button(register_frame, text="Back", padx=5, pady=2, font=font_style, bg="grey",command=go_back)
 goback_button.grid(row=9, column=2, pady=10, columnspan=3)
 
 root.mainloop()
