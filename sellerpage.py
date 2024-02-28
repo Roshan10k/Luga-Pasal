@@ -72,16 +72,21 @@ class PhotoApp:
         self.canvas.place(relx=0.68, rely=0.54, anchor=tk.W)  # Updated from grid to place
 
         # Capture, Select, and Upload buttons for photos
-        capture_btn = ttk.Button(self.root, text="       Take Photo       ", command=self.capture_photo)
-        capture_btn.place(relx=0.72, rely=0.82, anchor=tk.W)  # Updated from grid to place
+        capture_btn = ttk.Button(self.root, text="Take Photo", command=self.capture_photo)
+        capture_btn.place(relx=0.72, rely=0.82, anchor=tk.W)
         self.style_button(capture_btn)  # Apply style to the button
+        # Update seller_btn command to open loginbuyer
+        seller_btn = ttk.Button(self.root, text="Start Buying", command=self.open_loginbuyer)
 
-        select_btn = ttk.Button(self.root, text="       Select Photo     ", command=self.select_photo)
-        select_btn.place(relx=0.72, rely=0.87, anchor=tk.W)  # Updated from grid to place
+        seller_btn.place(relx=0.8, rely=0.07, anchor=tk.W)
+        self.style_button(seller_btn)  # Apply style to the button
+
+        select_btn = ttk.Button(self.root, text="Select Photo", command=self.select_photo)
+        select_btn.place(relx=0.72, rely=0.87, anchor=tk.W)
         self.style_button(select_btn)  # Apply style to the button
 
-        upload_btn = ttk.Button(self.root, text="      Upload Photo     ", command=self.upload_photo)
-        upload_btn.place(relx=0.72, rely=0.92, anchor=tk.W)  # Updated from grid to place
+        upload_btn = ttk.Button(self.root, text="Upload Photo", command=self.upload_photo)
+        upload_btn.place(relx=0.72, rely=0.92, anchor=tk.W)
         self.style_button(upload_btn)  # Apply style to the button
 
         # Initialize attribute to hold the captured image
@@ -90,6 +95,9 @@ class PhotoApp:
     def style_button(self, button):
         style = ttk.Style()
         style.configure('TButton', font=('Helvetica', 20))
+    def open_loginbuyer(event=None):
+        root.destroy()
+        import loginbuyer
 
     def capture_photo(self):
         cap = cv2.VideoCapture(0)
@@ -147,7 +155,7 @@ class PhotoApp:
                 messagebox.showerror("Error", f"Error uploading photo: {e}")
         else:
             messagebox.showerror("Error", "Please capture or select a photo first.")
-
+    
     def submit_form(self):
         title_value = self.title_entry.get()
         price_value = self.price_entry.get()
@@ -163,4 +171,6 @@ class PhotoApp:
 if __name__ == "__main__":
     root = tk.Tk()
     app = PhotoApp(root)
+    
+    
     root.mainloop()
