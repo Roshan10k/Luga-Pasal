@@ -42,7 +42,7 @@ def login_user():
 
         if user_data:
             root.destroy()
-            import Sellerpage
+            import sellerpage
             
            
         else:

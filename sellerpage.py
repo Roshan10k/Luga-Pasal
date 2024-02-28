@@ -76,6 +76,11 @@ class PhotoApp:
         capture_btn.place(relx=0.72, rely=0.82, anchor=tk.W)  # Updated from grid to place
         self.style_button(capture_btn)  # Apply style to the button
 
+        select_btn = ttk.Button(self.root, text="       Select Photo     ", command=self.select_photo)
+        select_btn.place(relx=0.72, rely=0.87, anchor=tk.W)  # Updated from grid to place
+        self.style_button(select_btn)  # Apply style to the button
+
+
         # Initialize attribute to hold the captured image
         self.captured_image = None
 
@@ -97,7 +102,20 @@ class PhotoApp:
 
         cap.release()
 
+    def select_photo(self):
+        file_path = filedialog.askopenfilename(title="Select Photo", filetypes=[("Image files", "*.png;*.jpg;*.jpeg")])
+
+        if file_path:
+            image = Image.open(file_path)
+
+            photo = ImageTk.PhotoImage(image)
+            self.canvas.create_image(0, 0, anchor=tk.NW, image=photo)
+            self.canvas.photo = photo
+
+            self.captured_image = image
+
     
+            messagebox.showerror("Error", "Please capture or select a photo first.")
 
     def submit_form(self):
         title_value = self.title_entry.get()
