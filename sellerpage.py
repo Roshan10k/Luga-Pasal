@@ -80,6 +80,9 @@ class PhotoApp:
         select_btn.place(relx=0.72, rely=0.87, anchor=tk.W)  # Updated from grid to place
         self.style_button(select_btn)  # Apply style to the button
 
+        upload_btn = ttk.Button(self.root, text="      Upload Photo     ", command=self.upload_photo)
+        upload_btn.place(relx=0.72, rely=0.92, anchor=tk.W)  # Updated from grid to place
+        self.style_button(upload_btn)  # Apply style to the button
 
         # Initialize attribute to hold the captured image
         self.captured_image = None
@@ -115,6 +118,34 @@ class PhotoApp:
             self.captured_image = image
 
     
+            messagebox.showerror("Error", "Please capture or select a photo first.")
+    def upload_photo(self):
+        if self.captured_image is not None:
+            try:
+                img_bytes = BytesIO()
+                self.captured_image.save(img_bytes, format="JPEG")
+                img_data = img_bytes.getvalue()
+
+                description = self.description_entry.get("1.0", tk.END).strip()
+                category = self.category_var.get()
+
+                # Replace the URL with the actual endpoint for uploading
+                upload_url = "https://example.com/upload"
+
+                # Replace 'file', 'description', and 'category' with the field names expected by the server
+                files = {'file': ('photo.jpg', img_data), 'description': description, 'category': category}
+
+                # Make the upload request
+                response = requests.post(upload_url, files=files)
+
+                if response.status_code == 200:
+                    messagebox.showinfo("Success", "Photo uploaded successfully!")
+                else:
+                    messagebox.showerror("Error", f"Failed to upload photo. Status code: {response.status_code}")
+
+            except Exception as e:
+                messagebox.showerror("Error", f"Error uploading photo: {e}")
+        else:
             messagebox.showerror("Error", "Please capture or select a photo first.")
 
     def submit_form(self):
