@@ -39,7 +39,54 @@ class PhotoApp:
         frame.place(relx=0.325, rely=0.6, anchor=tk.W)  # Adjusted placement for a more centered position
         frame.columnconfigure(0, weight=1)
 
-        
+        # Title
+        ttk.Label(frame, text="Title:").grid(column=0, row=0, sticky=tk.W)
+        self.title_entry = ttk.Entry(frame, width=40)
+        self.title_entry.grid(column=1, row=0, sticky=(tk.W, tk.E), pady=20)
+
+        # Price
+        ttk.Label(frame, text="Price(Rs):").grid(column=0, row=1, sticky=tk.W)
+        self.price_entry = ttk.Entry(frame, width=40)
+        self.price_entry.grid(column=1, row=1, sticky=(tk.W, tk.E), pady=20)
+
+        # Description
+        ttk.Label(frame, text="Description:").grid(column=0, row=2, sticky=tk.W)
+        self.description_entry = tk.Text(frame, width=40, height=5, wrap=tk.WORD)
+        self.description_entry.grid(column=1, row=2, sticky=(tk.W, tk.E), pady=20)
+
+        # Category
+        ttk.Label(frame, text="Category:").grid(column=0, row=3, sticky=tk.W)
+        self.category_var = tk.StringVar()
+        category_dropdown = ttk.Combobox(frame, textvariable=self.category_var,
+                                         values=["Pants", "Tshirt", "Hoodie", "Jacket", "Shoes"])
+        category_dropdown.grid(column=1, row=3, sticky=(tk.W, tk.E), pady=50)
+        category_dropdown.set("Select Category")
+
+        # Submit button
+        submit_button = ttk.Button(frame, text="Submit", command=self.submit_form)
+        submit_button.grid(column=1, row=4, sticky=(tk.W, tk.E))
+        self.style_button(submit_button)  # Apply style to the button
+
+
+
+    def style_button(self, button):
+        style = ttk.Style()
+        style.configure('TButton', font=('Helvetica', 20))
+
+
+    
+
+    def submit_form(self):
+        title_value = self.title_entry.get()
+        price_value = self.price_entry.get()
+        description_value = self.description_entry.get("1.0", tk.END).strip()
+        category_value = self.category_var.get()
+
+        # You can perform further actions with the values, such as printing them
+        print("Title:", title_value)
+        print("Price:", price_value)
+        print("Description:", description_value)
+        print("Category:", category_value)
 
 if __name__ == "__main__":
     root = tk.Tk()
