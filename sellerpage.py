@@ -67,12 +67,35 @@ class PhotoApp:
         submit_button.grid(column=1, row=4, sticky=(tk.W, tk.E))
         self.style_button(submit_button)  # Apply style to the button
 
+        # Create and configure frame for photo capturing/uploading
+        self.canvas = tk.Canvas(self.root, width=400, height=400)
+        self.canvas.place(relx=0.68, rely=0.54, anchor=tk.W)  # Updated from grid to place
 
+        # Capture, Select, and Upload buttons for photos
+        capture_btn = ttk.Button(self.root, text="       Take Photo       ", command=self.capture_photo)
+        capture_btn.place(relx=0.72, rely=0.82, anchor=tk.W)  # Updated from grid to place
+        self.style_button(capture_btn)  # Apply style to the button
+
+        # Initialize attribute to hold the captured image
+        self.captured_image = None
 
     def style_button(self, button):
         style = ttk.Style()
         style.configure('TButton', font=('Helvetica', 20))
 
+    def capture_photo(self):
+        cap = cv2.VideoCapture(0)
+        ret, frame = cap.read()
+
+        image = Image.fromarray(cv2.cvtColor(frame, cv2.COLOR_BGR2RGB))
+
+        photo = ImageTk.PhotoImage(image)
+        self.canvas.create_image(0, 0, anchor=tk.NW, image=photo)
+        self.canvas.photo = photo
+
+        self.captured_image = image
+
+        cap.release()
 
     
 
