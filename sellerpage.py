@@ -13,9 +13,23 @@ class PhotoApp:
         self.root.minsize(1440, 800)    # Set the minimum window size
         self.root.maxsize(1440, 800)# Make the window resizable
 
-        # Load b
+        # Load background image
+        bg_image = Image.open("Images\sellerpage.jpg")  
+        self. background = ImageTk.PhotoImage(bg_image)
 
-        
+        # Create a label for the background
+        self.bg_label = ttk.Label(self.root, image=self.background)
+        self.bg_label.place(relwidth=1, relheight=1)
+
+        # Initialize attributes for form elements
+        self.title_entry = None
+        self.price_entry = None
+        self.description_entry = None
+        self.category_var = None
+
+        # Initialize attributes for photo capturing/uploading
+        self.canvas = None
+        self.captured_image = None
 
         self.setup_gui()
 
@@ -25,7 +39,7 @@ class PhotoApp:
         frame.place(relx=0.325, rely=0.6, anchor=tk.W)  # Adjusted placement for a more centered position
         frame.columnconfigure(0, weight=1)
 
-       
+        
 
 if __name__ == "__main__":
     root = tk.Tk()
