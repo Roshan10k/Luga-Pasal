@@ -4,6 +4,9 @@ from PIL import Image, ImageTk
 from tkmacosx import Button
 from datetime import datetime
 
+def seller_login():
+    root.destroy()
+    import loginseller
 
 root=Tk()
 root.title("Brocode")
@@ -1803,6 +1806,8 @@ def Bill():
         messagebox.showinfo("Bill Generation Confirmation","You can continue shopping now.")
 
 bill_gen_button=Button(root,text="Proceed to Checkout",font="times 17 bold",bg="white",fg="black",activebackground="purple",command=Bill)
-bill_gen_button.place(x=1200,y=25)
+bill_gen_button.place(x=1220,y=25)
+start_selling=Button(root,text="Start Selling",font="times 17 bold",bg="white",command=seller_login)
+start_selling.place(x=1080,y=25)
 
 root.mainloop()
