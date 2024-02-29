@@ -4,17 +4,19 @@ from PIL import Image, ImageTk
 import cv2
 import requests
 from io import BytesIO
+import mysql.connector
+from mysql.connector import Error
 
 class PhotoApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Seller Page")
-        self.root.geometry("1440x800")  # Set the root geometry to 1440x800
+        self.root.geometry("1440x1080")  # Set the root geometry to 1440x800
         self.root.minsize(1440, 800)    # Set the minimum window size
         self.root.maxsize(1440, 800)# Make the window resizable
 
         # Load background image
-        bg_image = Image.open("Images\sellerpage.jpg")  
+        bg_image = Image.open("Luga-Pasal\Images\sellerpage.jpg")  
         self. background = ImageTk.PhotoImage(bg_image)
 
         # Create a label for the background
@@ -31,12 +33,33 @@ class PhotoApp:
         self.canvas = None
         self.captured_image = None
 
-        self.setup_gui()
+        # Connect to MySQL database
+        self.connection = self.connect_to_mysql()
+
+        if self.connection is not None:
+            self.setup_gui()
+        else:
+            print("Failed to establish a database connection. Check your connection details.")
+
+    def connect_to_mysql(self):
+        try:
+            connection = mysql.connector.connect(
+                host="localhost",
+                user="root",
+                password="",
+                database="LugaPasal"
+            )
+            if connection.is_connected():
+                print("Connected to MySQL database")
+                return connection
+        except Error as e:
+            print(f"Error: {e}")
+            return None
 
     def setup_gui(self):
-        # Create and configure frame for form elements
-        frame = ttk.Frame(self.root, padding="40")  # Increased padding for a larger frame
-        frame.place(relx=0.325, rely=0.6, anchor=tk.W)  # Adjusted placement for a more centered position
+    # Create and configure frame for form elements
+        frame = ttk.Frame(self.root, padding="40", style="White.TFrame")  # Add style for a white background
+        frame.place(relx=0.3, rely=0.6, anchor=tk.W)  # Adjusted placement for a more centered position and reduced width
         frame.columnconfigure(0, weight=1)
 
         # Title
@@ -73,7 +96,7 @@ class PhotoApp:
 
         # Capture, Select, and Upload buttons for photos
         capture_btn = ttk.Button(self.root, text="Take Photo", command=self.capture_photo)
-        capture_btn.place(relx=0.72, rely=0.82, anchor=tk.W)
+        capture_btn.place(relx=0.78, rely=0.82, anchor=tk.W)
         self.style_button(capture_btn)  # Apply style to the button
         # Update seller_btn command to open loginbuyer
         seller_btn = ttk.Button(self.root, text="Start Buying", command=self.open_loginbuyer)
@@ -82,11 +105,11 @@ class PhotoApp:
         self.style_button(seller_btn)  # Apply style to the button
 
         select_btn = ttk.Button(self.root, text="Select Photo", command=self.select_photo)
-        select_btn.place(relx=0.72, rely=0.87, anchor=tk.W)
+        select_btn.place(relx=0.78, rely=0.87, anchor=tk.W)
         self.style_button(select_btn)  # Apply style to the button
 
         upload_btn = ttk.Button(self.root, text="Upload Photo", command=self.upload_photo)
-        upload_btn.place(relx=0.72, rely=0.92, anchor=tk.W)
+        upload_btn.place(relx=0.78, rely=0.92, anchor=tk.W)
         self.style_button(upload_btn)  # Apply style to the button
 
         # Initialize attribute to hold the captured image
@@ -162,11 +185,24 @@ class PhotoApp:
         description_value = self.description_entry.get("1.0", tk.END).strip()
         category_value = self.category_var.get()
 
-        # You can perform further actions with the values, such as printing them
-        print("Title:", title_value)
-        print("Price:", price_value)
-        print("Description:", description_value)
-        print("Category:", category_value)
+        # Insert data into the 'product' table
+        self.insert_into_product_table(title_value, price_value, description_value, category_value)
+
+    def insert_into_product_table(self, title, price, description, category):
+        cursor = None
+        try:
+            cursor = self.connection.cursor()
+            query = "INSERT INTO product (title, price, description, category) VALUES (%s, %s, %s, %s)"
+            values = (title, price, description, category)
+            cursor.execute(query, values)
+            self.connection.commit()
+            messagebox.showinfo("Product Successfully added")
+        except Error as e:
+            print(f"Error: {e}")
+        finally:
+            if cursor is not None:
+                cursor.close()
+
 
 if __name__ == "__main__":
     root = tk.Tk()
@@ -174,3 +210,4 @@ if __name__ == "__main__":
     
     
     root.mainloop()
+    app.close_mysql_connection()
